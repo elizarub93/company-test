@@ -1,0 +1,148 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 25px 0;
+	@media only screen and (max-width : 979px){
+		flex-wrap: wrap;
+	}
+	&__left{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+	}
+	&__logo{
+		margin-right: 40px;
+
+	}
+	&__nav{
+		@media only screen and (max-width : 979px){
+			width: 100%;
+		}
+		& .nav__items{
+			@include clear-list;
+			display: flex;
+		}
+		& .nav__item{
+			margin-right: 25px;
+			
+		}
+		& .nav__link{
+			font-size: 14px;
+			&:hover{
+				text-decoration: underline;
+			}
+
+		}
+	}
+	&__right{
+		display: flex;
+		align-items: center;
+		flex: 0 0 auto;
+	}
+
+	&__account{
+		border: 1px solid;
+		border-color: rgba(83, 86, 90, 0.2);
+		color: #53565a;
+		font-family: "Vida 31 Pro";
+		font-size: 14px;
+		font-weight: 400;
+		border-radius: 20px;
+		padding: 9px 15px;
+		margin-left: 25px;
+		i{
+			padding-left: 12px;
+		}
+	}
+
+	
+	&__mobile-icon{
+		display: none;
+		margin-left: 35px;
+		cursor: pointer;
+	}
+	&__mobile-menu{
+		display: none;
+	}
+
+}
+.phone{
+		display: flex;
+		align-items: center;
+		color: #565f66;
+		font-family: "Vida 33 Pro";
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 20px;
+		margin-left: 22px;
+		&__icon{
+			display: flex;
+			padding: 5px;
+			border-radius: 50%;
+			border: 1px solid;
+			border-color: rgba(176, 106, 145, 0.4);
+			margin-left: 8px;
+			img{
+				padding: 5px;
+				border: 1px solid;
+				border-color: rgba(172, 96, 139, 0.7);
+				border-radius: 50%;
+			}
+		}
+	}
+.comparison{
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&__icon{
+			display: block;
+			width: 16px;
+			height: 12px;
+			background: url('img/comparison-icon.png') no-repeat;
+			position: relative;
+			margin-right: 10px;
+		}
+		&__number{
+			position: absolute;
+			top: -11px;
+    		right: -8px;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: $color-link;
+			color: #fff;
+			font-size: 11px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__text{
+			font-size: 14px;
+		}
+	}
+
+@media only screen and (max-width : 768px) {
+	.header{
+		&__nav{
+			display: none;
+		}
+		&__comparison{
+			display: none;
+		}
+		&__account{
+			display: none;
+		}
+		&__phone{
+			font-size: 14px;
+		}
+		&__mobile-icon{
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,97 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.news{
+	background-color: rgba(83, 86, 90, 0.1);
+
+	&__items{
+		display: flex;
+		padding: 30px 0 50px
+	}
+	&__item{
+		width: 25%;
+		padding: 0 40px;
+		box-sizing: border-box;
+	}
+	&__date{
+		color: rgba(0,0,0,0.4);
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		margin-bottom: 14px;
+	}
+	&__label{
+		background-color: #fff;
+		color: #000000;
+		font-size: 10px;
+		font-weight: 400;
+		line-height: 20px;
+		text-transform: uppercase;
+		padding: 5px;
+		margin-left: 5px;
+		border-radius: 3px;
+		&.active{
+			font-family: "Vida 33 Pro";
+			background-color: #c5e71b;
+		}
+	}
+	&__description{
+		color: #000000;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+	}
+	&__mobile{
+		display: none;
+	}
+}
+.slick-dots{
+	@include clear-list;
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	li{
+		width: 10px;
+		height: 10px;
+		background-color: #000000;
+		border-radius: 50%;
+		margin: 6px;
+		cursor: pointer;
+		&.slick-active{
+			opacity: 0.2;
+		}
+	}
+	button{
+		display: none;
+	}
+}
+@media only screen and (max-width : 768px){
+	.news{
+		&__item{
+			width: 33.33%;
+		}
+		&__item:last-child{
+			display: none;
+		}
+	}
+}
+@media only screen and (max-width : 640px){
+	.news{
+		&__items{
+			display: none;
+		}
+		&__mobile{
+			display: block!important;
+			padding-bottom: 19px;
+		}
+		&__item:last-child{
+			display: block;
+		}
+		&__description{
+			font-size: 22px;
+		}
+		&__item{
+			padding: 0 20px;
+		}
+	}
+}
